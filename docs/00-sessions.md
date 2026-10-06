@@ -40,3 +40,26 @@
   saturnkit holds for the survey as it is (`10-saturnkit.md`); the run
   will ask it for overlays called as functions, CD-DA playback and VDP2
   rotation planes.
+
+## Session 2 (2026-10-06): the programs as C++, the run to the first house
+
+* **The recompiler** (`09-recompiler.md`, `tools/recomp.py`): the resident
+  program and the nine overlays `main` loads as ten modules, the overlays
+  marked as called and returned from; four seeds for MAIN; self-test
+  15 532 of 15 532 vectors.
+* **The first run** (`11-runtime.md`, `tools/run.py`): from the boot
+  through the Working Designs logo and the prologue with their CD-DA
+  music (tracks 16 and 3, as in Beetle), the title, START twice, the new
+  game's first save, the burning village and the first house. The same
+  pictures as Beetle's; the title's perspective frame has its colours.
+* **saturnkit** (`10-saturnkit.md`): overlays called at their base and
+  returned from; the 1st read entered with interrupts open (the IP.BIN's
+  initial program leaves them so); discovery's short table entries;
+  VDP2's rotation screen RBG0, line scroll and raster effects (the
+  title's clouds, ground and horizon haze); VDP1 stopping at a command it
+  does not know (a block of noise in every town). Checked on Virtual
+  Hydlide, Deep Fear and X JAPAN, all three moved to c6057ea; Deep Fear's
+  run shifts by a few frames as it now takes every HBlank, its first room
+  the same.
+* **Tools**: `tools/vdp1list.py` (VDP1's command list in a dump), and
+  saturnkit's `SATURNKIT_VDP2_HIDE` to tell layers apart.

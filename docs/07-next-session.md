@@ -1,57 +1,44 @@
-# Next session: the recompiler and the overlays
+# Next session: into the game
 
-Where things stand: the disc, the programs and `main`'s state machine
-are mapped (`01`–`03`); discovery holds on all eleven programs; Beetle
-is driven from here to the first house. Nothing is built yet.
+Where things stand: the ten programs are C++ and self-tested
+(`09-recompiler.md`); on saturnkit's runtime the game boots, plays the
+logo and the prologue with their CD-DA music, shows the title as Beetle
+does (RBG0, line scroll, the raster haze), starts a new game and reaches
+the burning village and the first house (`11-runtime.md`).
+`python tools/recomp.py --build --test`, then `python tools/run.py`
+(headless, to the house), `--play` for the window.
 
-## 1. The programs as C++
+## First: what the user sees and hears in the window
 
-* `tools/recomp.py` in X JAPAN's shape, with eleven modules: `MAIN`
-  (`0`@0x06010000) and the ten overlays @0x06090000 (`EVENT1` and
-  `BTL_DEB` can be left out: nothing loads them).
-* Seeds for discovery: 0x0601F158 (called by every overlay), 0x0607833E,
-  0x06083556, 0x06086ED6. Then Ghidra 12's function list
-  (`saturnkit/ghidra/ExportFuncs.java`) against discovery for `0`, `TWN`
-  and `BATTLE`.
-* The self-test (`recomp.selftest --auto`) on each module; 0 differences.
+`python tools/run.py --play`: the user plays from the title into the
+village and the house and reports: the pictures, the music (CD-DA) and the
+effects (the AIFF files, the sound driver), the text, anything wrong
+against Beetle. Each game is recorded to `build/run/play-*.txt` and can be
+given back headless with `--input @FILE`.
 
-## 2. Overlays called as functions (saturnkit)
+## Then
 
-The runtime's `sh2_call` sends any call to a module base to
-`sh2_program_start`, which throws. Design the generic form first, then
-check it on the three other ports:
-
-* which modules are "called" rather than "started": a mark in the
-  recompiler's spec (`NAME=FILE@BASE` plus a flag), or a rule (a `jsr`
-  to a base whose module does not reset `r15` in its first instructions);
-* the call identifies the image at the base (crc32), activates it
-  (replacing the overlay before), then runs it on the same host stack and
-  returns;
-* what happens when the image matches no module: a clear message naming
-  the base and the crc, so a new overlay is easy to add.
-
-## 3. The first run
-
-`tools/run.py` in X JAPAN's shape, headless, pictures at chosen VBlanks:
-
-* the boot, `WDLOGO` (VDP1 polygons), its CD-DA track 16;
-* `OPNDEMO` and track 3: here saturnkit's CD block needs **Play over audio
-  tracks**, with the samples into the SCSP;
-* `LOGO`: the first **rotation plane**; RBG0 in saturnkit's VDP2;
-* START twice quickly at the title (in Beetle, `tools/oracle.py --at
-  40:START,80:START,80.4:START` reaches the village at 88 s and the
-  house at 130 s); the burning village, the first house.
-
-The oracle's pictures to compare with are in `build/oracle/twostart/`
-(t92–t120 the village, t130 the house) and `build/oracle/start/` (t48,
-t87 the title).
+1. The first dialogue: text boxes and the font (`MENUDATA.CHR`?), the
+   menus, the shops.
+2. Leaving the town: `FLD`, the world map. Open question 1 (rotation:
+   RBG0 or RBG1, coefficient mode); the WD logo already asks for RBG1.
+3. The first battle: `BATTLE` (and the copies from low work RAM, open
+   question 2: does the crc32 still find the overlay?).
+4. The AIFF effects: when they play, through what, mixed with the CD-DA
+   (open question 4).
+5. Saving and loading: `ALBERT_G_00` in the runtime's BUP file, and the
+   load screen.
+6. The notes the runtime still prints: RBG1 in the WD logo, CCCTL 0x0403
+   in the prologue, SFPRMD/SFCCMD in the town.
 
 ## Keep in mind
 
-* `--peek ADDR:N` takes N in decimal; `--dump N` ends with VDP2's
-  registers.
-* Bash heredocs feeding `python -` mangle `\n` inside strings and
-  non-ASCII: use files.
-* Every saturnkit change: Virtual Hydlide (`tools/recomp.py --build
-  --test`, `tools/run.py` to the field), Deep Fear and X JAPAN (their
-  self-tests and headless runs byte-identical), then bump all three.
+* The title takes START only twice in quick succession (3600 and 3624 in
+  the script; the user's finding).
+* `SATURNKIT_VDP2_HIDE=MASK` to tell layers apart; `tools/vdp1list.py` on
+  a `--dump` for VDP1's list.
+* Bash heredocs feeding `python -` (and `python -c "..."` inside double
+  quotes) mangle backslashes: `\n`, `\b`. Use files.
+* Every saturnkit change: Virtual Hydlide, Deep Fear and X JAPAN
+  (self-tests, headless runs byte-identical or the difference explained),
+  then bump all three.

@@ -20,7 +20,8 @@
    step per frame, and their rate on the Saturn (a VBlank counter, a
    limiter).
 6. **The slave SH-2**: which jobs `TWN`, `FLD` and `BATTLE` hand it.
-7. **The title's input**: START is taken only twice in quick succession
+7. **The title's input** (the runtime takes it the same way: START at
+   VBlanks 3600 and 3624 starts the game): START is taken only twice in quick succession
    (the user's finding in Beetle; one press, or presses 6 s apart, are
    not; two presses 0.4 s apart at 80 s, from `tools/oracle.py`, reach the
    burning village at 88 s and the first house at 130 s). Is that a
