@@ -34,8 +34,8 @@ is marked as inferred from names and headers.
   master`. The types look like those of Sega's sound area map (tone
   banks, sequences, DSP); the program walks the driver's area map at
   0x25A00400 (`0x06021C1C`). So each map loads its own driver, banks and
-  sequences: the sound effects, and perhaps music that is not on CD
-  (open question 3).
+  sequences: the sound effects and the towns' music (heard on the port in
+  the harpies' village while no CD-DA plays, session 2).
 
 ## Pictures (inferred from headers, to be decoded)
 

@@ -94,9 +94,12 @@ factory!" (18 000), the house, the forest and its people, a save at
 minutes in: the introduction cannot be skipped.
 
 The user's report: everything looks right but the characters over the
-scenery (fixed above). Only one CD-DA Play reaches the CD block in the
-whole game (track 4, from 42 s, repeat 15): to check by ear whether the
-music should change in the forest village (open question 3).
+scenery (fixed above); the music changes where it should (the harpies'
+village has its own), the voices there are and the other AIFF sounds play
+right. The last CD-DA Play is track 4 at 42 s: `tools/cdda_match.py` on
+the replay's sound matches track 4 from 60 s to about 260 s and no track
+from 280 s on, so the towns' music is the sound driver's (the `.SNF`
+sequences), which the runtime's 68000 and SCSP play.
 
 ## Still noted by the runtime
 

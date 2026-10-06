@@ -9,13 +9,17 @@
    state 5 copies 0x60000 after a battle? Inferred: `BATTLE.BIN` and
    `FLD.BIN` read there ahead of time. If the copy is not byte for byte
    the file, saturnkit's crc32 will not recognise the module.
-3. **Where the music comes from**: the CD-DA tracks for the logo and the
-   prologue (checked); for the towns, the world map, the battles? Do the
-   `.SNF` sequences play music too, or only effects?
+3. **Where the music comes from** (partly answered in session 2): CD-DA
+   for the logo (16), the prologue (3), the title (5) and the opening
+   scenes (4); the towns' music from the sound driver: in the user's game
+   no CD-DA Play reaches the CD block after 42 s, the recording matches
+   track 4 up to about 270 s and no track from 280 s on, and the user heard
+   the harpies' village's own music. To find for the world map and the
+   battles.
 4. **The AIFF effects**: how the `IVENT` and battle sounds are read (whole
    into memory or streamed from the CD) and played (SBL's PCM library or
-   the sound driver's PCM), and how they mix with the CD-DA. The user's
-   ears against Beetle.
+   the sound driver's PCM). By ear they play right on the port (the
+   user, session 2); the mechanism is still to read.
 5. **The frame pacing**: what the town, the world map and the battles
    step per frame, and their rate on the Saturn (a VBlank counter, a
    limiter).
