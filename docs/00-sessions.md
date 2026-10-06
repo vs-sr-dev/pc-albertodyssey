@@ -18,7 +18,8 @@
   functions in eleven programs, none with a problem; the recompiler emits
   them all (not yet built).
 * **The formats** (`02-data-formats.md`): 672 AIFF files (55 minutes:
-  354 story lines, the party's and the monsters' voices), Sega's sound
+  354 event sound effects and the attacks, as the user heard them; the
+  party's and the monsters' sounds by name), Sega's sound
   driver 1.28 with each map's banks in `MAPnnn.SNF`, VDP1 sprites and
   VDP2 pictures in a few headed formats. No movies.
 * **The oracle** (`tools/oracle.py`, now with `--every` and held
@@ -26,7 +27,9 @@
   Working Designs logo (CD-DA track 16), the prologue (track 3, both
   matched to the disc's tracks at correlation 0.95–1.00 by
   `tools/cdda_match.py`), the title, a VDP2 rotation plane in perspective,
-  then the burning village and the first house. The user found that the
+  then the burning village and the first house; its recording holds the
+  whole sound from the Saturn logo to the title (heard by the user). The
+  user found that the
   title wants **two START presses in quick succession**; the oracle
   reproduces it (two presses 0.4 s apart), to the house at 130 s.
 * **Curiosities** (`04-curiosities.md`): the Japanese build of the program

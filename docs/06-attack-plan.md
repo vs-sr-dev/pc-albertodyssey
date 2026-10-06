@@ -5,8 +5,9 @@
 A 2D role-playing game of 1996–97 on SBL: towns and dungeons drawn as
 VDP2 scroll planes with VDP1 sprites over them (`TWN`), a world map that
 is a VDP2 rotation plane seen in perspective (`FLD`; the title already
-shows one), turn-based battles (`BATTLE`), story scenes with spoken lines
-(354 AIFF files, 35 minutes), music on 21 CD-DA tracks. A resident
+shows one), turn-based battles (`BATTLE`), story scenes (`BEVENT*`, events in
+`TWN`), music on 21 CD-DA tracks, and 55 minutes of sound effects in
+AIFF files. A resident
 program of 518 KB swaps eleven overlays at one address and calls them
 as functions.
 
@@ -32,7 +33,7 @@ What saturnkit has, and what this game asks of it:
 | The overlay copied in from low work RAM (states 5 and 6) | modules are found by the crc32 of their image at their base, when they are started | check at run time that the copy is the file as read (open question 2); if not, identify by the code's range only |
 | **CD-DA**: the WD logo plays track 16, the prologue track 3 (checked in Beetle) | the CD block reads data; CD-DA reaches the SCSP's external input, but no game has played a track | the CD block's Play over audio tracks (FAD ranges, repeat, the status and the pickup's place), the samples into the SCSP's EXTS at 44.1 kHz, the volume through the SCSP's EFREG/EXTS levels |
 | **VDP2 rotation planes**: the title's world, and the world map (inferred) | NBG0–3, the sprite layer, windows; "rotation planes not done" | RBG0 (and RBG1 if used): the rotation parameter tables, the coefficient tables (per-line or per-dot perspective), screen-over, with the priorities and colour calculation already there |
-| AIFF voices through SBL's PCM library 1.15 | Virtual Hydlide's movie sound used SBL's PCM path | the voices streamed from the CD while a scene runs; to be heard against Beetle |
+| AIFF effects through SBL's PCM library 1.15 | Virtual Hydlide's movie sound used SBL's PCM path | the effects loaded or streamed while a scene or a battle runs, mixed with the CD-DA; to be heard against Beetle |
 | The slave SH-2 in `TWN`, `FLD`, `BATTLE` | the slave as a deterministic coroutine | what jobs it gets (the runtime's trace will tell) |
 | Saves (`BUP_INIT`, internal RAM or a cartridge) | BUP services in a host file | check the save and load screens |
 | Discovery's seeds | `--seeds` | 0x0601F158, 0x0607833E, 0x06083556, 0x06086ED6, and what the runtime stops on |
@@ -71,7 +72,7 @@ What saturnkit has, and what this game asks of it:
    twice, the burning village, the first house (`tools/run.py`, headless,
    pictures against Beetle's). saturnkit: CD-DA, RBG0.
 4. **The game**: walking in town, the menus, the first battle, the world
-   map, the scenes with their voices, saving and loading, the dungeons,
+   map, the scenes with their sound effects, saving and loading, the dungeons,
    to the end; against Beetle and played by the user.
 5. **The PC gains**: no waiting, the world map at the window's resolution,
    the scaling, the frame rate.

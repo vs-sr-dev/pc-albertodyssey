@@ -37,7 +37,8 @@ In the order the first run will meet them (`06-attack-plan.md`):
 2. **CD-DA.** The CD block's Play over audio tracks, their samples into
    the SCSP's external input. No game has used it until now.
 3. **VDP2 rotation planes** (RBG0, the coefficient tables, perspective).
-4. Possibly: AIFF streams through SBL's PCM library while a scene plays.
+4. Possibly: AIFF sound effects through SBL's PCM library, mixed with the
+   CD-DA.
 
 Each change will be checked on Virtual Hydlide, Deep Fear and X JAPAN
 before it goes in.

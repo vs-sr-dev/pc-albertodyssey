@@ -14,14 +14,19 @@ is marked as inferred from names and headers.
 * **`*.AIF`**: 672 plain AIFF files (`FORM`…`AIFF`, `COMM`, `INST`,
   `SSND`), mono, 16-bit, 22 050 Hz (five at 44 100 Hz), 55 minutes in
   all. The program carries SBL's PCM library (`PCM Version 1.15
-  1995-02-21`), which plays AIFF from memory or a stream. By name:
-  * `IVENTnnn` (354 files, 35 minutes): the story scenes' spoken lines
-    (inferred; to be heard);
+  1995-02-21`), which plays AIFF from memory or a stream. Heard by the
+  user, and by name:
+  * `IVENTnnn` (354 files, 35 minutes): **the events' sound effects**
+    (heard: drills, hens, magic; `IVENT075` is the screech films give the
+    bald eagle, a red-tailed hawk's). Not speech, among the files heard
+    so far.
+  * `AXZnnnn` (39): attacks (heard);
   * `AC*`, `AO*`, `AX*` + `PAIK`, `EKA`, `REOS`, `AMON`, `CARO`, `ERD`:
-    the party's voices in battle (Pike, Eka, Leos, Amon, Carro, Elder;
-    `A_TAM.C` gives five of these names in katakana, all but Carro);
-  * `MOZ`, `MOF`, `AOZ`, `AXZ`, `DAZ`, `VC`, `IT`: monsters, spells,
-    items (inferred).
+    each party member's sounds in battle, by name (Pike, Eka, Leos, Amon,
+    Carro, Elder; `A_TAM.C` gives five of these names in katakana, all
+    but Carro); by the `AXZ` files, `AX` would be their attacks;
+  * `MOZ`, `MOF`, `AOZ`, `DAZ`, `VC`, `IT`: monsters, spells, items
+    (inferred from names, not yet heard).
 * **`MAPnnn.SNF`** (73): a table of 16-byte records (a type word, the
   offset in the file, the size, 0) ending in zeros, then the parts.
   `MAP000.SNF` holds ten parts, of types 0x30, 0x38, 0x31 (5), 0x32 (2),

@@ -53,7 +53,7 @@ below come from the names, the headers and the code where it says so;
 | `0` | 1 | 518 172 | the program, the 1st read file, resident at 0x06010000 (`03-executables.md`) |
 | `*.BIN` | 27 | 3.5 MB | eleven overlays run at 0x06090000 (`WDLOGO`, `OPNDEMO`, `LOGO`, `TWN`, `FLD`, `BATTLE`, `CREDIT`, `BEVENT1`, `BEVENT2`, and `EVENT1`, `BTL_DEB` which nothing names), and data (`OPNDEMO2`, `SUNBG`, `LOGOBG`, `SCLMAP`, `ALG_TBL`, `MAPATARI`, `OBJFIELD`, `FLD_POLY`, `FIGHTNUM`, `HERO`, `BG2_*`, `MOYA1`, …) |
 | `ALG.GIN` | 1 | 487 048 | another build of the program: the Japanese one (`04-curiosities.md`) |
-| `*.AIF` | 672 | 147 MB | AIFF sound, 16-bit mono, 22 050 Hz (5 at 44 100 Hz), 55 minutes in all: 354 `IVENT*` (35 minutes, the spoken lines of the story's scenes, by name), the party's and the monsters' voices |
+| `*.AIF` | 672 | 147 MB | AIFF sound, 16-bit mono, 22 050 Hz (5 at 44 100 Hz), 55 minutes in all: 354 `IVENT*` (35 minutes, the events' sound effects, heard), the attacks (`AXZ*`, heard), the party's and the monsters' sounds (by name) |
 | `MAPnnn.SNF` | 73 | 22 MB | a map's sound: Sega's sound driver 1.28 and its banks, in a table of parts |
 | `MAPnnn.TWN` | 58 | 17 MB | a town's or a dungeon's map (by name) |
 | `MAPnnn.V1N` | 76 | 13 MB | a map's VDP1 sprites, 4-bit (by the first bytes) |

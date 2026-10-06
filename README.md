@@ -5,7 +5,7 @@ Saturn, 1996 in Japan as *Albert Odyssey Gaiden* by Sunsoft; 1997 in North
 America, translated and published by Working Designs), a 2D role-playing
 game, the legend of the Eldean clan and its holy sword (the disc's own
 abstract): towns, dungeons and a world map seen in perspective, with
-turn-based battles, spoken story scenes and music on CD. It came out on the Saturn
+turn-based battles, story scenes and music on CD. It came out on the Saturn
 only and was never re-released. The goal is the game running natively on
 PC: without the CD's waits between towns, maps and battles, its world map
 drawn sharp at the window's resolution, and its CD music as it is on the
@@ -70,7 +70,7 @@ music. A resident program, `0`, at 0x06010000 (SHC, SBL: GFS 2.10, PCM
 1.15) whose `main` is a state machine loading eleven overlays to
 0x06090000 and calling them as functions: logos, prologue, title, towns,
 world map, battles, scenes, credits. 672 AIFF files hold 55 minutes of
-voices and sounds; each map has its own copy of Sega's sound driver 1.28
+sound effects; each map has its own copy of Sega's sound driver 1.28
 and its banks. Discovery finds 2 232 functions in the eleven programs
 with no problem. Beetle Saturn driven from the boot through the prologue
 and the title (a rotation plane in perspective) to the first house. The

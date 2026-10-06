@@ -20,7 +20,7 @@ volume `ALBERT_ODYSSEY_GAIDEN` by `SUNSOFT,SUN_CORPORATION` (the US disc
 says `WORKING DESIGNS`), then every file with its source folder on the
 developers' machine: `root\` (the program, `File 0` from `root\ALG.BIN`,
 with `;File A.BIN;1` commented out above it), `btl\` (the battles, among
-them `BTL_DEB.BIN`), `pcm\` (the AIFF voices), `cdda\track02.cda` …
+them `BTL_DEB.BIN`), `pcm\` (the AIFF sound effects), `cdda\track02.cda` …
 `track22.cda`. A commented-out track `dmamap` held `root\suncdda` and
 `root\eucdda`. Two comment lines in Shift-JIS bracket the volume's identifiers and the
 copyright files' entries: `追加文−始まり` and `追加文−終わり`, "added
