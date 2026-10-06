@@ -63,3 +63,9 @@
   the same.
 * **Tools**: `tools/vdp1list.py` (VDP1's command list in a dump), and
   saturnkit's `SATURNKIT_VDP2_HIDE` to tell layers apart.
+* **Played by the user** in the window, through the whole introduction
+  (five unskippable minutes) to the harpies' forest village: "Wake up, you
+  pint-sized noise factory!"; everything right but the characters drawn
+  over table tops and tree crowns: VDP2's special priority, added to
+  saturnkit (c70abfc, the other ports byte-identical) and checked on the
+  user's recorded game, kept as `tools/scripts/to-the-harpies-village.txt`.

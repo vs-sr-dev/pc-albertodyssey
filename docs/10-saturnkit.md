@@ -16,6 +16,8 @@ of it.
 | 2 | 66e1e66 | runtime: VDP1 stops at a command of kind 0xC–0xF, with no end status (Mednafen's behaviour) |
 | 2 | e2ef3f4 | runtime: VDP2's RBG0 (parameters A and B, coefficient tables, bitmap or cells, screen-over); NBG0/NBG1 line scroll; raster effects (every line's HBlank taken while unmasked, VDP2 writes from the HBlank handler composed line by line); `SATURNKIT_VDP2_HIDE` |
 | 2 | c6057ea | README brought up to them |
+| 2 | c70abfc | runtime: VDP2's special priority and special colour calculation (SFPRMD, SFCCMD: per character, per dot by the special function codes, by the colour's MSB); the towns' table tops and tree crowns over the characters |
+| 2 | 64acac3 | README |
 
 ## Session 1: what held as it was
 
@@ -48,7 +50,10 @@ VBlanks and the whole run's sound compared byte for byte):
   2000, its sound shifted with it). Its first room at VBlank 2900 is
   pixel-identical.
 
-All three ports moved to 67c6e38, then to c6057ea, with a commit each
+* **c70abfc**: all three byte-identical (none of them sets SFPRMD or
+  SFCCMD).
+
+All three ports moved to 67c6e38, then to c6057ea, then to 64acac3, with a commit each
 ("saturnkit at …: … (from Albert Odyssey)").
 
 ## What this game will ask next

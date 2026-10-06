@@ -74,6 +74,30 @@ Each a saturnkit commit, checked on the other three ports
    sprite never shows. The runtime drew past it: a block of noise at the
    bottom right of every town screen.
 
+8. **VDP2's special priority** (c70abfc). The user played into the
+   harpies' village and saw the characters drawn over table tops and tree
+   crowns. The towns set NBG0 and NBG1 to priority 2 and SFPRMD to "per
+   character" (0x0005): the tiles whose pattern name carries the special
+   priority bit rise to 3, above the characters' sprites. The runtime used
+   the screen's priority alone.
+
+## The user's game
+
+Played in the window to the harpies' forest village, about eight and a
+half minutes, and recorded: `tools/scripts/to-the-harpies-village.txt`
+(30 306 VBlanks). Given back headless (`python tools/run.py --vblanks
+30300 --input @tools/scripts/to-the-harpies-village.txt`) it takes the
+same route: the village in flames, the ogres, the escape, the harpies
+(about VBlank 13 500), Pike woken by "Wake up, you pint-sized noise
+factory!" (18 000), the house, the forest and its people, a save at
+478 s. The game's first free step comes at about VBlank 18 000, five
+minutes in: the introduction cannot be skipped.
+
+The user's report: everything looks right but the characters over the
+scenery (fixed above). Only one CD-DA Play reaches the CD block in the
+whole game (track 4, from 42 s, repeat 15): to check by ear whether the
+music should change in the forest village (open question 3).
+
 ## Still noted by the runtime
 
 * `VDP2: RBG1, or rotation parameters chosen by window` (BGON 0x0030) in
@@ -81,8 +105,8 @@ Each a saturnkit commit, checked on the other three ports
   in Beetle in the frames looked at; to compare frame by frame.
 * `VDP2: extended colour calculation or gradation (CCCTL 0x0403)` in the
   prologue: the picture matches Beetle's frames looked at so far.
-* `VDP2: special priority, line colour or special colour calculation` in
-  the town: SFPRMD or SFCCMD is set; nothing seen wrong yet.
+* (The special priority note was the characters-over-scenery bug, now
+  done; the runtime notes the line colour screen alone now.)
 
 ## Tools for looking
 

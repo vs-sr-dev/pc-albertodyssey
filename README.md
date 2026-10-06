@@ -101,10 +101,19 @@ from an HBlank handler, and VDP1 stopping on a command it does not know
 
 ## Playing it
 
-Not yet: the game runs as far as the first house with a pad script.
-`python tools/run.py --play` opens it in a window (keys in
-`saturnkit/runtime/host.cpp`: the arrows, Enter for START, Z X C for A B
-C), to see how far it goes.
+The game is playable as far as it has been played: through the whole
+introduction to the harpies' forest village. Battles, the world map and
+everything after have not been reached yet.
+
+```sh
+python tools/run.py --play            # the game in a window
+```
+
+Keys (in `saturnkit/runtime/host.cpp`): the arrows, Enter for START,
+Z X C for A B C, A S D for X Y Z, Q W for L R; F11 fullscreen, F12 a
+picture. A gamepad works too. Each game is recorded to
+`build/run/play-DATE-TIME.txt`; `python tools/run.py --input @that-file`
+plays it again, headless.
 
 ## Documentation
 

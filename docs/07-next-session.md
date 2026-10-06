@@ -8,6 +8,12 @@ the burning village and the first house (`11-runtime.md`).
 `python tools/recomp.py --build --test`, then `python tools/run.py`
 (headless, to the house), `--play` for the window.
 
+## Done in session 2 already: the user played to the harpies' village
+
+Recorded as `tools/scripts/to-the-harpies-village.txt`; the
+characters-over-scenery bug it showed is fixed (special priority).
+Next by play: the first battle, the world map.
+
 ## First: what the user sees and hears in the window
 
 `python tools/run.py --play`: the user plays from the title into the
